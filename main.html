@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>照片墙</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<h2>照片墙</h2>
+	<div class="container">
+		<img class="xx1" src="images/xx1.jpg">
+		<img class="xx2" src="images/xx2.jpg">
+		<img class="xx3" src="images/xx3.jpg">
+		<img class="xx4" src="images/xx4.jpg">
+		<img class="xx5" src="images/xx5.jpg">
+		<img class="xx6" src="images/xx6.jpg">
+		<img class="xx7" src="images/xx7.jpg">
+		<img class="xx8" src="images/xx8.jpg">
+		<img class="xx9" src="images/xx9.jpg">
+		<img class="xx10" src="images/xx10.jpg">
+		<img class="xx11" src="images/xx11.jpg">
+		<img class="xx12" src="images/xx12.jpg">
+		<img class="xx13" src="images/xx13.jpg">
+	</div>
+	<script type="text/javascript">
+	var images = document.getElementsByTagName("img");
+	var flag = true;
+	for (var i = 0; i < images.length; i++) {
+		images[i].onclick = function() {
+			if (flag) {
+				flag = false;
+				this.style.left = 0;
+				this.style.top = 0;
+				this.style.width = "960px";
+				this.style.height = "650px";
+				images[6].style.width = "300px";
+				images[6].style.left = "330px";
+			} else {
+				flag = true;
+				this.style.left = Math.ceil(Math.random()*960) + "px";
+				this.style.top = Math.ceil(Math.random()*650) + "px";
+				// alert(this.style.left);
+				this.style.width = "256px";
+				this.style.height = "191px";
+				images[6].style.width = "120px";
+				images[6].style.height = "260px";
+			}
+		}
+	}
+	</script>
+</body>
+</html>
